@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | Deeply Matured Sessions</title>
+    <style>
+        :root { 
+            --bg-color: #0d0d11; 
+            --card-bg: #15151f; 
+            --text-main: #f3f4f6; 
+            --text-muted: #9ca3af; 
+            --accent: #d97706; 
+            --border-color: #222233; 
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+            max-width: 1100px; 
+            width: 100%;
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+        } 
+        .logo span { 
+            color: var(--accent); 
+        }
+        nav a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-size: 0.95rem; 
+        } 
+        nav a:hover { 
+            color: var(--text-main); 
+        }
+        main { 
+            flex: 1;
+            max-width: 600px; 
+            width: 100%;
+            margin: 60px auto; 
+            padding: 0 20px; 
+            text-align: center;
+        }
+        .section-title { 
+            font-size: 2rem; 
+            margin-bottom: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        /* Premium Membership Card Layout */
+        .portal-card {
+            background: linear-gradient(145deg, #181824 0%, #11111a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .portal-card input[type="email"] {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            text-align: center;
+            transition: border-color 0.2s ease;
+        }
+
+        .portal-card input[type="email"]:focus {
+            border-color: var(--accent);
+        }
+
+        .join-btn {
+            width: 100%;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .join-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Platform Hub List */
+        .divider {
+            margin: 40px 0 30px;
+            display: flex;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin: 0 15px;
+        }
+
+        .platform-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .platform-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .platform-btn:hover {
+            border-color: var(--accent);
+            background: rgba(217, 119, 6, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .platform-btn span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Deeply Matured <span>Sessions</span></a>
+        <nav>
+            <a href="index.html">Latest Mix</a>
+            <a href="archive.html">Rooftop Archive</a>
+            <a href="about.html">About</a>
+            <a href="subscribe.html" style="color: var(--text-main);">Subscribe</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="section-title">Join the Community</h1>
+        <p class="subtitle">Never miss a live broadcast, tracklist reveal, or exclusive local audio release.</p>
+
+        <!-- Newsletter Circle Form -->
+        <div class="portal-card">
+            <form onsubmit="event.preventDefault(); alert('Welcome to the inner circle! We will update you on upcoming rooftop dates.');">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter your email address" required>
+                </div>
+                <button type="submit" class="join-btn">Unlock VIP Access</button>
+            </form>
+        </div>
+
+        <div class="divider">Follow & Stream Everywhere</div>
+
+        <!-- Main Media Hub Triggers -->
+        <div class="platform-channels">
+            <a href="https://youtube.com" target="_blank" class="platform-btn">
+                🟥 YouTube <span>• Subscribe to Broadcasts</span>
+            </a>
+            <a href="https://hearthis.at" target="_blank" class="platform-btn">
+                📻 HearThis.at <span>• Download MP3 Mixes</span>
+            </a>
+            <a href="#" class="platform-btn">
+                📸 Instagram <span>• Behind-the-Scenes</span>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

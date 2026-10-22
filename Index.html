@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deeply Matured Sessions | Deep & Soulful House Hub</title>
+    <style>
+        /* Modern Premium Minimalist Theme */
+        :root {
+            --bg-color: #0d0d11;
+            --card-bg: #15151f;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #d97706; /* Deep Amber Accent */
+            --accent-hover: #b45309;
+            --border-color: #222233;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        /* Featured/Latest Session Section */
+        .featured-session {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 28px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .session-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        .session-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .session-description {
+            color: var(--text-muted);
+            max-width: 850px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Show Notes & Links Layout */
+        .show-notes {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+
+        .show-notes h3 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+        }
+
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .session-link {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .session-link:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Email Subscription Box */
+        .newsletter-box {
+            background: linear-gradient(135deg, #15151f 0%, #0d0d11 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .newsletter-text {
+            max-width: 500px;
+        }
+
+        .newsletter-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .newsletter-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .newsletter-form input[type="email"]:focus {
+            border-color: var(--accent);
+        }
+
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Past Sessions Archive Grid */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-color);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #1e1e2a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .card-thumbnail::after {
+            content: "▶ Play Session";
+            position: absolute;
+            background: rgba(0,0,0,0.75);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .card:hover .card-thumbnail::after {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-meta {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 850px) {
+            .newsletter-box { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .newsletter-form { max-width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 10px; }
+            .session-info h1 { font-size: 1.7rem; }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body> 
+
+
+    <header>
+    <a href="index.html" class="logo">Deeply Matured <span>Sessions</span></a>
+    <nav>
+        <a href="index.html">Latest Mix</a>
+        <a href="archive.html">Rooftop Archive</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+    </nav>
+</header>
+
+
+    <main>
+        <!-- Featured Live Replay Section -->
+        <section class="featured-session">
+            <h2 class="section-title">Latest Broadcast</h2>
+            <div class="video-container">
+    <!-- Corrected embed link for YouTube playlists -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=8U0R6C7PzcE5nhNF&amp;list=PLXFgWNf39ljUbex4-UNR7B2En_A0oEeXB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
+            <div class="session-info">

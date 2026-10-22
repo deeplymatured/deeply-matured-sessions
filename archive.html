@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooftop Archive | Deeply Matured Sessions</title>
+    <style>
+        :root { 
+            --bg-color: #0d0d11; 
+            --card-bg: #14141d; 
+            --text-main: #f3f4f6; 
+            --text-muted: #9ca3af; 
+            --accent: #d97706; 
+            --border-color: #222233; 
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.5; 
+            padding-bottom: 80px;
+        }
+        header { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .logo { 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            letter-spacing: -0.02em;
+        } 
+        .logo span { 
+            color: var(--accent); 
+        }
+        nav a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-size: 0.9rem; 
+        } 
+        nav a:hover { 
+            color: var(--text-main); 
+        }
+        main { 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        .section-title { 
+            font-size: 1.5rem; 
+            margin-bottom: 25px; 
+            text-transform: uppercase; 
+            border-left: 3px solid var(--accent); 
+            padding-left: 12px; 
+            letter-spacing: 0.02em;
+        }
+
+        /* 3-Column Compact Card Grid Layout */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .archive-item { 
+            background: var(--card-bg); 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color); 
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Responsive 16:9 Video Box Wrapper */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .item-content {
+            padding: 16px;
+        }
+
+        .item-meta {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-main);
+        }
+
+        /* High-Density Row List for Catalog Depth */
+        .dense-list {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dense-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        .dense-row:last-child {
+            border-bottom: none;
+        }
+
+        .dense-row:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .row-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-right: 15px;
+        }
+
+        .episode-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .episode-title {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .row-btn {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .row-btn:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .dense-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .row-btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Deeply Matured <span>Sessions</span></a>
+        <nav>
+            <a href="index.html">Latest Mix</a>
+            <a href="archive.html" style="color: var(--text-main);">Rooftop Archive</a>
+            <a href="about.html">About</a>
+            <a href="subscribe.html">Subscribe</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">Featured Rooftop Broadcasts</h2>
+        
+        <div class="archive-grid">
+            <!-- Feature 1: Dj Cue RSA -->
+            <div class="archive-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/vg0BRx8g3Hw?si=FPbZ12dxqieBgVVr" title="Dj Cue Rsa Live" allowfullscreen></iframe>
+                </div>
+                <div class="item-content">
+                    <div class="item-meta">The Cave JHB</div>
+                    <h3 class="item-title">Dj Cue Rsa | Techno House Mix | Rooftop Groove 2026</h3>
+                </div>
+            </div>
+
+            <!-- Feature 2: OG LOCO -->
+            <div class="archive-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/x4yANEfoYOI?si=YCtUOvrQ8k0baLMG" title="OG LOCO Live" allowfullscreen></iframe>
+                </div>
+                <div class="item-content">
+                    <div class="item-meta">Agno & Friends</div>
+                    <h3 class="item-title">OG LOCO | Deep & Soulful House Mix 2026</h3>
+                </div>
+            </div>
+
+            <!-- Feature 3: Echo Deep -->
+            <div class="archive-item">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/bXxwb8kl7Bw?si=d4D8_ll1s7F8sEVZ" title="Echo Deep Live" allowfullscreen></iframe>
+                </div>
+                <div class="item-content">
+                    <div class="item-meta">Le Domicile Session</div>
+                    <h3 class="item-title">Echo Deep | Deep & Soulful House Mix 2026</h3>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Complete Session Catalog</h2>
+        
+        <!-- High-Density Row List Archive for All Remaining Tracks -->
+        <div class="dense-list">
+            
+            <div class="dense-row">
+                <div class="row-left">
+                    <span class="episode-tag">Trust SA Session</span>
+                    <span class="episode-title">Trust SA | Deep & Soulful House Mix 2026 | Le Domicile | Rooftop Groove</span>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="row-btn">Watch Session</a>
+            </div>
+
+            <div class="dense-row">
+                <div class="row-left">
+                    <span class="episode-tag">Fogo Session</span>
+                    <span class="episode-title">Fogo | Deep & Soulful House Mix 2026 | Le Domicile | Rooftop Groove</span>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="row-btn">Watch Session</a>
+            </div>
+
+            <div class="dense-row">
+                <div class="row-left">
+                    <span class="episode-tag">Sir Quinton Bourne Edition</span>
+                    <span class="episode-title">Sir Quinton Bourne | Deep House Mix 2026 | Le Domicile | Rooftop Groove</span>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="row-btn">Watch Session</a>
+            </div>
+
+            <div class="dense-row">
+                <div class="row-left">
+                    <span class="episode-tag">DrexxBeats Activation</span>
+                    <span class="episode-title">DrexxBeats | 3 Step/Afro House | VGNO & FRIENDS ACTIVATION | Rooftop Groove</span>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="row-btn">Watch Session</a>
+            </div>
+
+            <div class="dense-row">
+                <div class="row-left">
+                    <span class="episode-tag">DJ Athi Guest Slot</span>
+                    <span class="episode-title">DJ Athi – RNB & Hip Hop Live Mix | Rooftop Groove | Newscafe - Southgate</span>
+                </div>
+                <a href="https://youtube.com" target="_blank" class="row-btn">Watch Session</a>
+            </div>
+
+            <div class="dense-row">
+                <div class="row-left

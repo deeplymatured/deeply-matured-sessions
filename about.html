@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Booking | Deeply Matured Sessions</title>
+    <style>
+        /* Re-use CSS block variable patterns */
+        :root { 
+            --bg-color: #0d0d11; 
+            --card-bg: #15151f; 
+            --text-main: #f3f4f6; 
+            --text-muted: #9ca3af; 
+            --accent: #d97706; 
+            --border-color: #222233; 
+        }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; 
+        }
+        header { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            text-decoration: none; 
+            text-transform: uppercase; 
+        } 
+        .logo span { 
+            color: var(--accent); 
+        }
+        nav a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-left: 20px; 
+            font-size: 0.95rem; 
+        } 
+        nav a:hover { 
+            color: var(--text-main); 
+        }
+        main { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        .section-title { 
+            font-size: 1.6rem; 
+            margin-bottom: 24px; 
+            text-transform: uppercase; 
+            border-left: 3px solid var(--accent); 
+            padding-left: 12px; 
+            letter-spacing: -0.01em;
+        }
+        .bio-block { 
+            margin-bottom: 40px; 
+            font-size: 1.1rem; 
+            color: var(--text-muted); 
+        }
+        .booking-form { 
+            background: var(--card-bg); 
+            padding: 35px; 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .form-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        .form-group { 
+            margin-bottom: 20px; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .form-group label { 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            color: var(--text-main); 
+            letter-spacing: 0.03em;
+        }
+        .form-group input, .form-group textarea, .form-group select { 
+            background: rgba(0,0,0,0.4); 
+            border: 1px solid var(--border-color); 
+            padding: 14px; 
+            border-radius: 6px; 
+            color: white; 
+            outline: none; 
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { 
+            border-color: var(--accent); 
+        }
+        .submit-btn { 
+            background: var(--accent); 
+            color: white; 
+            font-weight: 700; 
+            border: none; 
+            padding: 16px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Deeply Matured <span>Sessions</span></a>
+        <nav>
+            <a href="index.html">Latest Mix</a>
+            <a href="archive.html">Rooftop Archive</a>
+            <a href="about.html" style="color: var(--text-main);">About</a>
+            <a href="subscribe.html">Subscribe</a>
+        </nav>
+    </header>
+    <main>
+        <h2 class="section-title">The Vision</h2>
+        <div class="bio-block">
+            <p>Curated by DeepKid Mape and Dineo Mosh,Deeply Matured Sessions is a premier alternative music destination. We showcase elite curation spanning Deep House, Deep Tech, Amapiano, Afro House, and Soulful sounds, filmed live against stunning urban skylines and intimate local venues.</p>
+        </div>
+
+        <h2 class="section-title">Join Us on the Decks</h2>
+        
+        <!-- Updated Form to a Live Performance Request Architecture -->
+        <form class="booking-form" onsubmit="event.preventDefault(); alert('Your Guest DJ request has been successfully submitted to Deeply Matured Sessions!');">
+            <p class="form-subtitle">
+                Are you a selector or producer specializing in deep, soulful, or underground music? Apply here to be featured as a guest artist on an upcoming live Rooftop Groove broadcast.
+            </p>
+
+            <div class="form-group">
+                <label>DJ / Artist Name</label>
+                <input type="text" placeholder="e.g., Skizzy" required>
+            </div>
+
+            <div class="form-group">
+                <label>Primary Sub-Genre / Style</label>
+                <select required>
+                    <option value="" disabled selected>Select your musical style</option>
+                    <option value="deep-soulful">Deep & Soulful House</option>
+                    <option value="deep-tech">Deep Tech / Underground</option>
+                    <option value="afro-house">Afro House</option>
+                    <option value="amapiano">Amapiano (Sgidongo/Boots/Soulful)</option>
+                    <option value="other">Other Alternative Electronic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your Live Set Demo Link</label>
+                <input type="url" placeholder="Paste a YouTube, SoundCloud, or HearThis.at link showcasing your mixing style" required>
+            </div>
+
+            <div class="form-group">
+                <label>Why do you want to play a Deeply Matured Session?</label>
+                <textarea rows="4" placeholder="Tell us how your musical curation aligns with our community, atmosphere, and energy..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Performance Request</button>
+        </form>
+    </main>
+</body>
+</html>
